@@ -9,53 +9,21 @@
             "enabled": "true"
         },
         "properties": {
-            "cord_id": {
-                "type": "text"
-            },
-            "url": {
-                "type": "text"
-            },
-            "sha": {
-                "type": "text"
-            },
             "title": {
                 "type": "text"
             },
-            "source": {
-                "type": "text"
-            },
-            "doi": {
-                "type": "text"
-            },
-            "pmc_id": {
-                "type": "text"
-            },
-            "pubmed_id": {
-                "type": "text"
-            },
-            "license": {
+            "authors": {
                 "type": "text"
             },
             "abstract": {
                 "type": "text"
             },
-            "publish_time": {
+            "url": {
                 "type": "text"
             },
-            "authors": [],
-            "journal": {
-                "type": "text"
+            "pubmed_id": {
+                "type": "long"
             },
-            "microsoft_id": {
-                "type": "text"
-            },
-            "who_id": {
-                "type": "text"
-            },
-            "paragraphs": {
-                "type": "text"
-            },
-            "bibliography": [],
             "embed": {
                 "type": "dense_vector",
                 "dims": 768
