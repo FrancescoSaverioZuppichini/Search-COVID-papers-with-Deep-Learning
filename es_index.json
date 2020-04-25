@@ -1,0 +1,65 @@
+{
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 1
+    },
+    "mappings": {
+        "dynamic": "true",
+        "_source": {
+            "enabled": "true"
+        },
+        "properties": {
+            "cord_id": {
+                "type": "text"
+            },
+            "url": {
+                "type": "text"
+            },
+            "sha": {
+                "type": "text"
+            },
+            "title": {
+                "type": "text"
+            },
+            "source": {
+                "type": "text"
+            },
+            "doi": {
+                "type": "text"
+            },
+            "pmc_id": {
+                "type": "text"
+            },
+            "pubmed_id": {
+                "type": "text"
+            },
+            "license": {
+                "type": "text"
+            },
+            "abstract": {
+                "type": "text"
+            },
+            "publish_time": {
+                "type": "text"
+            },
+            "authors": [],
+            "journal": {
+                "type": "text"
+            },
+            "microsoft_id": {
+                "type": "text"
+            },
+            "who_id": {
+                "type": "text"
+            },
+            "paragraphs": {
+                "type": "text"
+            },
+            "bibliography": [],
+            "embed": {
+                "type": "dense_vector",
+                "dims": 768
+            }
+        }
+    }
+}
