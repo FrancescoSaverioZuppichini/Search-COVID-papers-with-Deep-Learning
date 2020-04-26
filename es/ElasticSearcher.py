@@ -12,7 +12,7 @@ class ElasticSearcherResponse:
     
     def __post_init__(self):
         self.table = PrettyTable()
-        self.table.field_names = ["score", "Paper"]
+        self.table.field_names = ["Score", "Paper"]
 
         for hit in self.res['hits']['hits']:
             paper = hit['_source']
