@@ -8,7 +8,7 @@
 # Search COVID papers with Deep Learning
 *Transformers + Elastic Search = ❤️*
 
-![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.gif?raw=true)
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/cl.gif?raw=true)
 
 Good news everyone, in this article we are not going to fit a linear regression model on the COVID-19 data! But, instead we are going to build a sematic browser using deep learning to search in more than 50k papers about the recent COVID-19 disease.  
 
@@ -30,13 +30,13 @@ Let's take a look
 
 ```python
 import pandas as pd
-from covid_semantic_browser.Project import Project
+from Project import Project
 # Project holds all the paths
 pr = Project()
 
 df = pd.read_csv(pr.data_dir / 'metadata.csv')
 
-df.head(1)
+df.head(5)
 ```
 
 
@@ -101,6 +101,90 @@ df.head(1)
       <td>True</td>
       <td>custom_license</td>
       <td>http://europepmc.org/articles/pmc125340?pdf=re...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ymceytj3</td>
+      <td>e3d0d482ebd9a8ba81c254cc433f314142e72174</td>
+      <td>PMC</td>
+      <td>Crystal structure of murine sCEACAM1a[1,4]: a ...</td>
+      <td>10.1093/emboj/21.9.2076</td>
+      <td>PMC125375</td>
+      <td>11980704.0</td>
+      <td>unk</td>
+      <td>CEACAM1 is a member of the carcinoembryonic an...</td>
+      <td>2002-05-01</td>
+      <td>Tan, Kemin; Zelus, Bruce D.; Meijers, Rob; Liu...</td>
+      <td>The EMBO Journal</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>True</td>
+      <td>custom_license</td>
+      <td>http://europepmc.org/articles/pmc125375?pdf=re...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>wzj2glte</td>
+      <td>00b1d99e70f779eb4ede50059db469c65e8c1469</td>
+      <td>PMC</td>
+      <td>Synthesis of a novel hepatitis C virus protein...</td>
+      <td>10.1093/emboj/20.14.3840</td>
+      <td>PMC125543</td>
+      <td>11447125.0</td>
+      <td>no-cc</td>
+      <td>Hepatitis C virus (HCV) is an important human ...</td>
+      <td>2001-07-16</td>
+      <td>Xu, Zhenming; Choi, Jinah; Yen, T.S.Benedict; ...</td>
+      <td>EMBO J</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>True</td>
+      <td>custom_license</td>
+      <td>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2sfqsfm1</td>
+      <td>cf584e00f637cbd8f1bb35f3f09f5ed07b71aeb0</td>
+      <td>PMC</td>
+      <td>Structure of coronavirus main proteinase revea...</td>
+      <td>10.1093/emboj/cdf327</td>
+      <td>PMC126080</td>
+      <td>12093723.0</td>
+      <td>unk</td>
+      <td>The key enzyme in coronavirus polyprotein proc...</td>
+      <td>2002-07-01</td>
+      <td>Anand, Kanchan; Palm, Gottfried J.; Mesters, J...</td>
+      <td>The EMBO Journal</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>True</td>
+      <td>custom_license</td>
+      <td>http://europepmc.org/articles/pmc126080?pdf=re...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>i0zym7iq</td>
+      <td>dde02f11923815e6a16a31dd6298c46b109c5dfa</td>
+      <td>PMC</td>
+      <td>Discontinuous and non-discontinuous subgenomic...</td>
+      <td>10.1093/emboj/cdf635</td>
+      <td>PMC136939</td>
+      <td>12456663.0</td>
+      <td>unk</td>
+      <td>Arteri-, corona-, toro- and roniviruses are ev...</td>
+      <td>2002-12-01</td>
+      <td>van Vliet, A.L.W.; Smits, S.L.; Rottier, P.J.M...</td>
+      <td>The EMBO Journal</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>True</td>
+      <td>True</td>
+      <td>custom_license</td>
+      <td>http://europepmc.org/articles/pmc136939?pdf=re...</td>
     </tr>
   </tbody>
 </table>
@@ -402,7 +486,7 @@ There are two tricks here, first, we use `torch.utils.data.DataLoader` to create
 
 If everything works correctly, you should see our data displayed by elastic search
 
-![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/es_stored.jpg?raw=true)
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/es_stored.jpg?raw=true)
 
 ### Make a query
 
@@ -479,12 +563,27 @@ es_search(embedder(['Effect of the virus on pregnant women'])[0].tolist())
 
 It worked! We can now increase the readability of the output and add an input to type the query and the final result is:
 
-![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.png?raw=true)
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/cl.png?raw=true)
 
-We can try a few queries 
+## More queries
+
+Finally, we can ask and find interesting papers. Empicarlly, queries with more details work better since they provide more context.
+
+For example, we may want to know the 
 
 ## Conclusions
 
 In this project we build a semantic browser to search on more than 50k COVID-19 papers. The original project from in which I have been working with students from the Universita of Triste is [here](https://github.com/gsarti/covid-papers-browser). A live demo is available [here](http://covidbrowser.areasciencepark.it/)
 
 You can also play around with the command line app, you need to follow the instruction from here.
+
+
+### Acknowledgment
+
+I would like to thank [Gabriele Santi](https://www.linkedin.com/in/gabrielesarti/) for helping me in the writing of this article, [Marco Franzon](https://www.linkedin.com/in/marco-franzon/) and [Tommaso Rodani](https://www.linkedin.com/in/tommaso-rodani-471a43b8/) for supporting in the elastic search implementation.
+
+Thank you for reading
+
+Be safe,
+
+Francesco Saverio Zuppichini

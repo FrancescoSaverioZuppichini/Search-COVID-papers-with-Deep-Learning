@@ -1,7 +1,6 @@
 # Covid Search Papers
 
-![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.gif?raw=true)
-
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/cl.gif?raw=true)
 A sematic browser that uses deep learning to search in more than 50k papers about the recent COVID-19 disease.  
 
 My medium article []
