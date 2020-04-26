@@ -12,6 +12,8 @@
 # Search COVID papers with Deep Learning
 *Transformers + Elastic Search = ❤️*
 
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.gif?raw=true)
+
 Good news everyone, in this article we are not going to fit a linear regression model on the COVID-19 data! But, instead we are going to build a sematic browser using deep learning to search in more than 50k papers about the recent COVID-19 disease.  
 
 The key idea is to encode each paper in a vector representing its semantic content and then search using cosine similary between a query and all the encoded documents. This is the same process used by image browsers (e.g. Google Images) to search for similar images. 
@@ -305,6 +307,7 @@ You can read more about the index creation on the elastic search [doc](https://w
 For convenience, I have stored the configuration in a `.json` file and created a class named `ElasticSearchProvided` to handle the storing process.
 
 
+
 ```python
 import json
 from pathlib import Path
@@ -431,9 +434,10 @@ We are almost done. The last piece of the puzzle is a way to search in the datab
 Where `vector` is our input. So, we created a class to do exactly that, take a vector as an input an show all the results from the query
 
 
+
 ```python
 @dataclass
-class Elasticsearcher:
+class ElasticSearcher:
     """
     This class implements the logic behind searching for a vector in elastic search.
     """
@@ -469,8 +473,24 @@ class Elasticsearcher:
 ```
 
 
+    -----------------------------------------------------------------
+
+    NameError                       Traceback (most recent call last)
+
+    <ipython-input-1-0cf010b46260> in <module>
+    ----> 1 @dataclass
+          2 class ElasticSearcher:
+          3     """
+          4     This class implements the logic behind searching for a vector in elastic search.
+          5     """
+
+
+    NameError: name 'dataclass' is not defined
+
+
+
 ```python
-es_search = Elasticsearcher()
+es_search = ElasticSearcher()
 es_search(embedder(['Effect of the virus on pregnant women'])[0].tolist())
 ```
 
@@ -635,7 +655,9 @@ es_search(embedder(['Effect of the virus on pregnant women'])[0].tolist())
 
 
 
-We can work a little bit to increase the readability of the output and add  input to type the query and the final result is
+We can work a little bit to increase the readability of the output and add  input to type the query and the final result is:
+
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.jpg?raw=true)
 
 Pigliare le query da https://covidex.ai/
 
@@ -645,7 +667,4 @@ We can try a few queries
 
 In this project we build a semantic browser to search on more than 50k COVID-19 papers. The original project from in which I have been working with students from the Universita of Triste is [here](https://github.com/gsarti/covid-papers-browser). A live demo is available [here](http://covidbrowser.areasciencepark.it/)
 
-
-```python
-
-```
+You can also play around with the command line app, you need to follow the instruction from here.
