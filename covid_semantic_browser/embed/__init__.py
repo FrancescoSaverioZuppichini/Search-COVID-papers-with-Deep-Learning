@@ -1,2 +1,0 @@
-from .CovidPapersEmbeddedAdapter import CovidPapersEmbeddedAdapter
-from .Embedder import Embedder
