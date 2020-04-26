@@ -1,4 +1,3 @@
-import numpy as np
-from .MyDataset import MyDataset
+from .CovidPapersDataset import CovidPapersDataset
 
 
