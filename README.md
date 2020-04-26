@@ -481,10 +481,6 @@ It worked! We can now increase the readability of the output and add an input to
 
 ![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.png?raw=true)
 
-We can work a little bit to increase the readability of the output and add an input to type the query and the final result is:
-
-![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/images/cl.png?raw=true)
-
 We can try a few queries 
 
 ## Conclusions
