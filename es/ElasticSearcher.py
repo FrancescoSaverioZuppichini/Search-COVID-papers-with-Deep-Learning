@@ -18,7 +18,7 @@ class ElasticSearcherResponse:
             paper = hit['_source']
             title_wrap = '\033[1m' + textwrap.fill(paper['title'], width=75) + '\033[0m'
             abstract_wrap = textwrap.fill(paper['abstract'], width=75)
-            url = '\033[4m' + paper['url'] + '\033[0m'
+            url = '\033[4m' + str(paper['url']) + '\033[0m'
             text = f"{title_wrap}\n{abstract_wrap}\n{url}\n\n"
             self.table.add_row([hit['_score'], text])
 
