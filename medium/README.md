@@ -10,11 +10,13 @@
 
 ![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/cl.gif?raw=true)
 
-Good news everyone, in this article we are not going to fit a linear regression model on the COVID-19 data! But, instead we are going to build a sematic browser using deep learning to search in more than 50k papers about the recent COVID-19 disease.  
+Today we are going to build a sematic browser using deep learning to search in more than 50k papers about the recent COVID-19 disease.  
 
-The key idea is to encode each paper in a vector representing its semantic content and then search using cosine similary between a query and all the encoded documents. This is the same process used by image browsers (e.g. Google Images) to search for similar images. 
+All the code is on my GitHub [repo](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning). While a live version of this article is [here](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/tutorial.ipynb)
 
-So, so our puzzle is composed by three pieces: data, a mapping from papers to vectors and a way to search.
+The key idea is to encode each paper in a vector representing its semantic content and then search using cosine similarity between a query and all the encoded documents. This is the same process used by image browsers (e.g. Google Images) to search for similar images. 
+
+So, our puzzle is composed of three pieces: data, a mapping from papers to vectors and a way to search.
 
 Most of the work is based on [this project](https://github.com/gsarti/covid-papers-browser) in which I am working with students from the Universita of Trieste (Italy). A live demo is available [here](http://covidbrowser.areasciencepark.it/).
 
@@ -508,7 +510,7 @@ We are almost done. The last piece of the puzzle is a way to search in the datab
 
 ```
 
-Where `vector` is our input. So, we created a class to do exactly that, take a vector as an input an show all the results from the query
+Where `vector` is our input. So, we created a class that takes a vector as an input an show all the results from the query
 
 
 
@@ -561,15 +563,23 @@ es_search(embedder(['Effect of the virus on pregnant women'])[0].tolist())
 *As public health professionals respond to emerging infections, particular attention needs to be paid to **pregnant women** and their offspring. Pregnant women might be more susceptible to, or more severely affected by, emerging infections. The effects of a new maternal infection on the embryo or fetus are difficult to predict. Some medications recommended for prophylaxis or treatment could harm the embryo or fetus. We discuss the challenges of responding to emerging infections among pregnant women, and we propose strategies for overcoming these challenges.*
 
 
-It worked! We can now increase the readability of the output and add an input to type the query and the final result is:
+It worked! We can now create a nice command line interface where the user can type a query. The final result is:
 
 ![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/cl.png?raw=true)
 
 ## More queries
 
-Finally, we can ask and find interesting papers. Empicarlly, queries with more details work better since they provide more context.
+Finally, we can ask a question and find interesting papers. Empicarlly, queries with more details work better since they provide more context.
 
-For example, we may want to know the 
+For example, we may want to know the *What is the effectiveness of chloroquine for COVID-19*. The results are
+
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/2.png?raw=true)
+
+Or *How does COVID-19 bind to the ACE2 receptor?*
+
+![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/3.png?raw=true)
+
+The search engine seems to work good but it is not perfect, in the next part of this tutorial we will try to improve its accuracy.
 
 ## Conclusions
 
@@ -578,12 +588,17 @@ In this project we build a semantic browser to search on more than 50k COVID-19 
 You can also play around with the command line app, you need to follow the instruction from here.
 
 
-### Acknowledgment
+#### Acknowledgment
 
-I would like to thank [Gabriele Santi](https://www.linkedin.com/in/gabrielesarti/) for helping me in the writing of this article, [Marco Franzon](https://www.linkedin.com/in/marco-franzon/) and [Tommaso Rodani](https://www.linkedin.com/in/tommaso-rodani-471a43b8/) for supporting in the elastic search implementation.
+I would like to thank [Gabriele Santi](https://www.linkedin.com/in/gabrielesarti/) for helping me in the writing of this article, [Marco Franzon](https://www.linkedin.com/in/marco-franzon/) and [Tommaso Rodani](https://www.linkedin.com/in/tommaso-rodani-471a43b8/) for supporting me in the elastic search implementation.
 
 Thank you for reading
 
 Be safe,
 
 Francesco Saverio Zuppichini
+
+
+```python
+
+```
