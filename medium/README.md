@@ -438,8 +438,3 @@ Thank you for reading
 Be safe,
 
 Francesco Saverio Zuppichini
-
-
-```python
-
-```
