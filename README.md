@@ -1,12 +1,15 @@
-# Covid Search Papers
+# COVID Search Papers
 
 ![alt](https://github.com/FrancescoSaverioZuppichini/Search-COVID-papers-with-Deep-Learning/blob/develop/medium/images/cl.gif?raw=true)
-A sematic browser that uses deep learning to search in more than 50k papers about the recent COVID-19 disease.  
+A semantic browser that uses deep learning to search in more than 50k papers about the recent COVID-19 disease. 
+
+
+It uses a deep learning model from [HuggingFace's `transformers`](https://github.com/huggingface/transformers)  to embed each paper in a fixed `[768]` vector. We load all the papers + the embeddings into Elastic Search. Search is performed by computing cosine similarity between a query and all the documents' embedding.
 
 My medium article []
 
 ## Getting Started
-We assume you have elastic search running on your machine. We provided the embeddings and the index file from here (TODO). 
+We assume you have Elastic Search installed and running on your machine. We provided the embeddings and the index file from here (TODO). 
 
 ### Fill up the database
 
@@ -42,7 +45,7 @@ python main.py
 ```
 
 #### Docker (suggested)
-You can create the container by run
+To create the container run
 
 ```
 // at root level
@@ -51,7 +54,7 @@ docker run --net="host" -i covid-search
 ```
 
 ### Dump the database
-We dump the database using [elasticsearch-dump](https://github.com/taskrabbit/elasticsearch-dump) by running
+We dumped the database using [elasticsearch-dump](https://github.com/taskrabbit/elasticsearch-dump) by running
 
 ```
 elasticdump \
