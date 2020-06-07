@@ -4,7 +4,8 @@ from embed import CovidPapersEmbeddedAdapter, Embedder
 from es import ElasticSearchProvider
 from data import CovidPapersDataset
 from Project import Project
-
+from tqdm.autonotebook import tqdm
+ 
 pr = Project()
 # prepare the data
 ds = CovidPapersDataset.from_path(pr.data_dir / 'metadata.csv')
