@@ -1,5 +1,5 @@
 prettytable==0.7.2
-numpy==1.17.4
+numpy==1.22.0
 pandas==0.25.3
 elasticsearch==7.6.0
 torch==1.4.0
