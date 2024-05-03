@@ -4,6 +4,6 @@ pandas==0.25.3
 elasticsearch==7.6.0
 torch==1.4.0
 sentence_transformers==0.2.5.1
-tqdm==4.40.0
+tqdm==4.66.3
 art==4.6
 dataclasses==0.6
